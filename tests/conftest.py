@@ -5,14 +5,13 @@ import tempfile
 
 import pytest
 
+from air_crewai_trust.audit_ledger import AuditLedger
 from air_crewai_trust.config import (
-    AirTrustConfig,
     AuditLedgerConfig,
     ConsentGateConfig,
     InjectionDetectionConfig,
     VaultConfig,
 )
-from air_crewai_trust.audit_ledger import AuditLedger
 from air_crewai_trust.consent_gate import ConsentGate
 from air_crewai_trust.data_vault import DataVault
 from air_crewai_trust.injection_detector import InjectionDetector

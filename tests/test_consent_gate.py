@@ -1,9 +1,8 @@
 """Tests for the ConsentGate — risk classification and approval."""
 
-import pytest
 
-from air_crewai_trust.consent_gate import ConsentGate, TOOL_RISK_MAP
 from air_crewai_trust.config import ConsentGateConfig, RiskLevel
+from air_crewai_trust.consent_gate import ConsentGate
 
 
 class TestClassifyRisk:
