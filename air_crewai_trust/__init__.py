@@ -25,12 +25,12 @@ Usage:
 from __future__ import annotations
 
 from .config import (
+    RISK_ORDER,
     AirTrustConfig,
     AuditLedgerConfig,
     ConsentGateConfig,
     InjectionDetectionConfig,
     RiskLevel,
-    RISK_ORDER,
     VaultConfig,
 )
 from .plugin import AirTrustPlugin

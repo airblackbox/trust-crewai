@@ -18,8 +18,8 @@ import json
 import logging
 from typing import Any
 
-from .config import AirTrustConfig
 from .audit_ledger import AuditLedger
+from .config import AirTrustConfig
 from .consent_gate import ConsentGate
 from .data_vault import DataVault
 from .injection_detector import InjectionDetector
@@ -59,10 +59,10 @@ class AirTrustPlugin:
 
         try:
             from crewai.utilities.hooks import (
-                register_before_tool_call_hook,
+                register_after_llm_call_hook,
                 register_after_tool_call_hook,
                 register_before_llm_call_hook,
-                register_after_llm_call_hook,
+                register_before_tool_call_hook,
             )
         except ImportError:
             raise ImportError(
@@ -85,10 +85,10 @@ class AirTrustPlugin:
 
         try:
             from crewai.utilities.hooks import (
-                unregister_before_tool_call_hook,
+                unregister_after_llm_call_hook,
                 unregister_after_tool_call_hook,
                 unregister_before_llm_call_hook,
-                unregister_after_llm_call_hook,
+                unregister_before_tool_call_hook,
             )
 
             unregister_before_tool_call_hook(self._before_tool_call)
@@ -216,7 +216,6 @@ class AirTrustPlugin:
             if result["tokenized"]:
                 data_tokenized = True
                 # Try to mutate messages with tokenized content
-                tokenized_content = result["result"]
                 if hasattr(context, "messages") and isinstance(context.messages, list):
                     for i, msg in enumerate(context.messages):
                         if isinstance(msg, dict) and "content" in msg:
@@ -229,7 +228,7 @@ class AirTrustPlugin:
         if self.config.injection_detection.enabled:
             scan_result = self.injection_detector.scan(full_content)
             if scan_result.detected:
-                injection_detected = True
+                injection_detected = True  # noqa: F841
 
                 if (
                     self.config.injection_detection.log_detections
