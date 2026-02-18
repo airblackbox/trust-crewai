@@ -4,6 +4,9 @@
 
 Part of the [AIR Blackbox](https://airblackbox.com) ecosystem. Adds tamper-proof audit trails, sensitive data tokenization, consent gates for destructive tools, and prompt injection detection to any CrewAI project.
 
+> **[View Interactive Demo](https://htmlpreview.github.io/?https://github.com/airblackbox/trust-crewai/blob/main/demo.html)** — Walk through every feature with animated examples.
+
+
 ## Quick Start
 
 ```bash
