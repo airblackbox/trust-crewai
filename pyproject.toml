@@ -37,9 +37,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/nostalgicskinco/air-crewai-trust"
-Repository = "https://github.com/nostalgicskinco/air-crewai-trust"
-Issues = "https://github.com/nostalgicskinco/air-crewai-trust/issues"
+Homepage = "https://github.com/airblackbox/trust-crewai"
+Repository = "https://github.com/airblackbox/trust-crewai"
+Issues = "https://github.com/airblackbox/trust-crewai/issues"
 Documentation = "https://airblackbox.com/docs"
 
 [tool.setuptools.packages.find]
