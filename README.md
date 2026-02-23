@@ -120,16 +120,16 @@ This plugin is part of the AIR Blackbox observability and trust platform:
 
 | Repository | Purpose |
 |-----------|---------|
-| [air-blackbox-gateway](https://github.com/nostalgicskinco/air-blackbox-gateway) | Go proxy gateway with detection, prevention, and optimization |
-| [air-python-sdk](https://github.com/nostalgicskinco/air-python-sdk) | Python SDK for the gateway |
-| [openclaw-air-trust](https://github.com/nostalgicskinco/openclaw-air-trust) | TypeScript trust layer for OpenClaw |
-| **air-crewai-trust** | **Python trust layer for CrewAI** (this repo) |
+| [gateway](https://github.com/airblackbox/gateway) | Go proxy gateway with detection, prevention, and optimization |
+| [python-sdk](https://github.com/airblackbox/python-sdk) | Python SDK for the gateway |
+| [trust-openclaw](https://github.com/airblackbox/trust-openclaw) | TypeScript trust layer for OpenClaw |
+| **trust-crewai** | **Python trust layer for CrewAI** (this repo) |
 
 ## Development
 
 ```bash
-git clone https://github.com/nostalgicskinco/air-crewai-trust.git
-cd air-crewai-trust
+git clone https://github.com/airblackbox/trust-crewai.git
+cd trust-crewai
 pip install -e ".[dev]"
 pytest tests/ -v
 ```
