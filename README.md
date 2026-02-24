@@ -142,6 +142,7 @@ See [docs/eu-ai-act-compliance.md](./docs/eu-ai-act-compliance.md) for the full 
 | `air-crewai-trust` | CrewAI | `pip install air-crewai-trust` |
 | `openclaw-air-trust` | TypeScript / Node.js | `npm install openclaw-air-trust` |
 | Gateway | Any HTTP agent | `docker pull ghcr.io/airblackbox/gateway:main` |
+| [air-compliance](https://pypi.org/project/air-compliance/) | Compliance Scanner | `pip install air-compliance` |
 
 ## Development
 
