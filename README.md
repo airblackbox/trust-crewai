@@ -5,9 +5,11 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-3776AB.svg?logo=python&logoColor=white)](https://python.org)
 
 
-**AIR Trust Layer for CrewAI** — Drop-in security, audit, and compliance for your AI agents.
+**EU AI Act compliance infrastructure for CrewAI agents.** Drop-in trust layer that adds tamper-evident audit logging, PII tokenization, consent-based tool gating, and prompt injection detection — making your CrewAI agent stack compliant with Articles 9, 10, 11, 12, 14, and 15 of the EU AI Act.
 
-Part of the [AIR Blackbox](https://airblackbox.com) ecosystem. Adds tamper-proof audit trails, sensitive data tokenization, consent gates for destructive tools, and prompt injection detection to any CrewAI project.
+Part of the [AIR Blackbox](https://github.com/airblackbox) ecosystem — the compliance layer for autonomous AI agents.
+
+> The EU AI Act enforcement date for high-risk AI systems is **August 2, 2026**. See the [full compliance mapping](./docs/eu-ai-act-compliance.md) for article-by-article coverage.
 
 > **[View Interactive Demo](https://htmlpreview.github.io/?https://github.com/airblackbox/trust-crewai/blob/main/demo.html)** — Walk through every feature with animated examples.
 
@@ -119,16 +121,27 @@ plugin.export_audit()      # → [{"id": "...", "action": "tool_call", ...}, ...
 plugin.get_vault_stats()   # → {"total_tokens": 5, "by_category": {"api_key": 3, "pii": 2}}
 ```
 
+## EU AI Act Compliance
+
+| EU AI Act Article | Requirement | AIR Feature |
+|---|---|---|
+| Art. 9 | Risk management | ConsentGate risk classification |
+| Art. 10 | Data governance | DataVault PII tokenization |
+| Art. 11 | Technical documentation | Full call graph audit logging |
+| Art. 12 | Record-keeping | HMAC-SHA256 tamper-evident chain |
+| Art. 14 | Human oversight | Consent-based tool blocking |
+| Art. 15 | Robustness & security | InjectionDetector + multi-layer defense |
+
+See [docs/eu-ai-act-compliance.md](./docs/eu-ai-act-compliance.md) for the full article-by-article mapping.
+
 ## AIR Blackbox Ecosystem
 
-This plugin is part of the AIR Blackbox observability and trust platform:
-
-| Repository | Purpose |
-|-----------|---------|
-| [gateway](https://github.com/airblackbox/gateway) | Go proxy gateway with detection, prevention, and optimization |
-| [python-sdk](https://github.com/airblackbox/python-sdk) | Python SDK for the gateway |
-| [trust-openclaw](https://github.com/airblackbox/trust-openclaw) | TypeScript trust layer for OpenClaw |
-| **trust-crewai** | **Python trust layer for CrewAI** (this repo) |
+| Package | Framework | Install |
+|---|---|---|
+| `air-langchain-trust` | LangChain / LangGraph | `pip install air-langchain-trust` |
+| `air-crewai-trust` | CrewAI | `pip install air-crewai-trust` |
+| `openclaw-air-trust` | TypeScript / Node.js | `npm install openclaw-air-trust` |
+| Gateway | Any HTTP agent | `docker pull ghcr.io/airblackbox/gateway:main` |
 
 ## Development
 
@@ -141,4 +154,4 @@ pytest tests/ -v
 
 ## License
 
-MIT
+Apache-2.0
